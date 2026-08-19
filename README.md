@@ -1,67 +1,66 @@
-# Lineman Field Guide — community decks
+# A deck list for the Lineman Field Guide app
 
-This repository is the list the **Lineman Field Guide** app reads for its Community
-section. It is public because the app fetches `index.json` with no credentials, over
-plain HTTPS, on a phone that may be on a truck in a field.
+This is one list among however many exist. **Anyone can publish their own** — a school, a
+local, an apprenticeship programme, one lineman with good cards. Nobody approves them and
+the app's developer is not involved.
 
-Nothing here is app content. Every item is a contributor's own study material, shown
-under their name, and the app's provenance line does not apply to it.
+## Publish your own list
 
-## What's listed
+1. Put your exported `.fieldbook-deck.json` files (from **My decks → Share**) anywhere that
+   serves files over **https**: a public GitHub repo like this one, your school's website, a
+   public shared folder.
+2. Next to them, put a file called `index.json`:
 
-One sample deck, so the feature can be seen working end to end. Everything else comes
-from what people send in — see **Submitting** below. The list is curated, not open: a
-person reads every submission before it appears here.
+```json
+{
+  "app": "lineman-field-book",
+  "kind": "community-index",
+  "version": 1,
+  "updated": "2026-08-19",
+  "notice": "Decks from Local 640's apprenticeship class.",
+  "decks": [
+    {
+      "id": "unique-id",
+      "title": "Year 1 code questions",
+      "author": "Local 640 JATC",
+      "cards": 40,
+      "file": "decks/year1.fieldbook-deck.json",
+      "tags": ["code", "year1"]
+    }
+  ],
+  "notes": []
+}
+```
 
-## How the app uses this
+3. Hand out the link to `index.json`. In the app: **Apprentice → Shared decks → Follow a
+   list**, paste, done.
 
-1. `index.json` is fetched when the user taps **Refresh list**, and cached on the phone
-   so the section still works with no signal.
-2. Deck and note files are resolved **relative to `index.json`**. The app refuses
-   absolute paths, `..`, and anything that is not `https:`.
-3. Installing a deck copies it into the user's own "My decks". Nothing is uploaded from
-   the app, ever, and no account exists.
+`app` must be `lineman-field-book` and `kind` must be `community-index` — that is how the app
+knows the file is meant for it. File paths are relative to `index.json`; absolute paths, `..`
+and anything not https are refused.
 
-## Submitting
+## Sharing with one person
 
-**Submissions are closed at the moment.** The app hides the submission panel until the
-curator's address is live, so there is nothing to attach a file to yet — see
-`COMMUNITY_SUBMISSIONS_OPEN` in the app's `src/config.ts`. The terms below are what will
-apply when it opens.
+You don't need a list at all. In **My decks**, tap a deck, tap **Share**, and send the file by
+AirDrop, text, email, or anything else. They tap **Import a deck file**. Phone to phone, no
+server, nobody in the middle.
 
-When it is open: export a deck or your notes from **My decks** in the app and email the
-file to the address on the Community screen. Include the name you want shown.
+## What the app does with a list
 
-**Study aids only.** Not your employer's standards, not company procedures, not a
-copyrighted test bank, not text copied from a handbook or another app. Cards must be
-your own words. Cite the app page or the OSHA paragraph where a rule lives rather than
-restating a rule as law.
+Fetches `index.json` when the user taps Refresh, caches it so it still works with no signal,
+and installs a deck into that user's own **My decks** when they choose to. Nothing is ever
+uploaded from the app and there are no accounts.
 
-**What you keep and what you give.** You keep ownership of what you write. Submitting it
-grants the developer a worldwide, royalty-free, perpetual, irrevocable, non-exclusive,
-sublicensable and transferable licence to publish, edit, translate, adapt and build on
-it in the app and any future version, including a paid one, with your name on it. It is
-unpaid and cannot be withdrawn once granted. The full wording is clause 9 of the app's
-terms of use, shown in the app under Settings › Terms of use, and stated on the Community
-screen where you submit. Send only your own work.
+Every deck is shown under its author's name and labelled as coming from the list it came
+from. It is not app content and the app's provenance line does not apply to it. A list is
+only as trustworthy as whoever gave you the link.
 
-The curator may edit, relabel, refuse or remove anything at any time, and is under no
-obligation to list a submission.
+## Limits
 
-## Curator: adding an item
+Index capped at 2 MB and 500 entries; every field length-capped; malformed entries dropped.
+Users can follow up to 10 lists.
 
-1. Drop the exported `.fieldbook-deck.json` or `.fieldbook-notes.json` into `decks/` or
-   `notes/`.
-2. Add an entry to `index.json` with a unique `id`, the author name, the card or note
-   count, and the file path relative to `index.json`.
-3. Bump `updated` at the top level. The app shows that date as "Updated ...".
-4. Commit to `main`. The raw URL is served immediately; no build step.
+## This particular list
 
-`app` must stay `lineman-field-book` — it is the app's slug and the parser rejects an
-index without it, regardless of the app's display name.
-
-## Safety
-
-The app caps the index at 2 MB, the number of entries at 500, and the length of every
-field. A malformed entry is dropped rather than rendered. That is a backstop, not a
-substitute for reading what you list.
+Run by the app's developer, and it is optional — a user can remove it and follow only their
+school's. It carries one sample deck so the mechanism can be seen working.
