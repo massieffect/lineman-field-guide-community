@@ -1,0 +1,45 @@
+{
+ "app": "lineman-field-book",
+ "kind": "user-deck",
+ "version": 1,
+ "deck": {
+  "id": "sample",
+  "title": "Sample: sag and rigging quick cards",
+  "author": "Field Guide team (sample)",
+  "description": "An example community deck so the screen isn't empty in development. Replace with real contributions.",
+  "cards": [
+   {
+    "id": "c1",
+    "front": "Sag formula (level span)",
+    "back": "Sag = w \u00d7 S\u00b2 \u00f7 (8 \u00d7 T)",
+    "wrong": [
+     "Sag = w \u00d7 S \u00f7 8T",
+     "Sag = 8T \u00f7 wS\u00b2"
+    ],
+    "created": "2026-08-18"
+   },
+   {
+    "id": "c2",
+    "front": "Two-leg sling at 45\u00b0, per-leg tension for 1,000 lb",
+    "back": "About 707 lb (1000 \u00f7 (2 \u00d7 sin 45\u00b0))",
+    "wrong": [
+     "500 lb",
+     "1,000 lb"
+    ],
+    "created": "2026-08-18"
+   },
+   {
+    "id": "c3",
+    "front": "Snatch block, line turned 90\u00b0",
+    "back": "Load on the block \u2248 1.41 \u00d7 line tension",
+    "wrong": [
+     "Same as line tension",
+     "2 \u00d7 line tension"
+    ],
+    "created": "2026-08-18"
+   }
+  ],
+  "created": "2026-08-18",
+  "updated": "2026-08-18"
+ }
+}

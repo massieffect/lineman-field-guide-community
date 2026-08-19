@@ -1,0 +1,19 @@
+{
+  "app": "lineman-field-book",
+  "kind": "community-index",
+  "version": 1,
+  "updated": "2026-08-19",
+  "notice": "Community study material. Each item is its author's own words, reviewed by the curator before listing. Not app content: the app's provenance line does not apply. Contributors keep ownership and grant the licence in clause 9 of the app's terms of use.",
+  "decks": [
+    {
+      "id": "sample-sag-rigging",
+      "title": "Sample: sag and rigging quick cards",
+      "author": "Field Guide team (sample)",
+      "cards": 3,
+      "file": "decks/sample-sag-rigging.fieldbook-deck.json",
+      "tags": ["sample", "rigging", "sag"],
+      "updated": "2026-08-19"
+    }
+  ],
+  "notes": []
+}
