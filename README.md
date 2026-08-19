@@ -24,8 +24,13 @@ person reads every submission before it appears here.
 
 ## Submitting
 
-Export a deck or your notes from **My decks** in the app and email the file to the
-address on the Community screen. Include the name you want shown.
+**Submissions are closed at the moment.** The app hides the submission panel until the
+curator's address is live, so there is nothing to attach a file to yet — see
+`COMMUNITY_SUBMISSIONS_OPEN` in the app's `src/config.ts`. The terms below are what will
+apply when it opens.
+
+When it is open: export a deck or your notes from **My decks** in the app and email the
+file to the address on the Community screen. Include the name you want shown.
 
 **Study aids only.** Not your employer's standards, not company procedures, not a
 copyrighted test bank, not text copied from a handbook or another app. Cards must be
